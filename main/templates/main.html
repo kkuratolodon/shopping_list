@@ -65,6 +65,11 @@
             const data = await response.json();
             return data;
         }
+        async function tes() {
+            const joke = await fetchData();
+            alert(joke.data);
+        }
+        tes()
         async function getProducts() {
             return fetch("{% url 'main:get_product_json' %}").then((res) => res.json())
         }
@@ -98,11 +103,6 @@
             document.getElementById("form").reset()
             return false
         }
-        async function tes() {
-            const joke = await fetchData();
-            alert(joke.data);
-        }
-        tes()
         document.getElementById("button_add").onclick = addProduct
     </script>
 {% endblock content %}
